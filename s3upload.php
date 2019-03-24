@@ -6,8 +6,8 @@ use Aws\S3\Exception\S3Exception;
 
 	$config = [ 
         's3-access' => [ 
-            'key' => 'AKIAJYVYIIGGJQHBMDSA', 
-            'secret' => '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', 
+            'key' => 'KEY_ID', 
+            'secret' => 'SECRET_KEY_ID', 
             'bucket' => 'zoodifyfilesbucket', 
             'region' => 'ap-south-1', 
             'version' => 'latest', 

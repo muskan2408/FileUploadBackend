@@ -13,8 +13,8 @@ if(isset($_POST['name'])){
        // if(isset($_POST['keyfile'])){
         $config = [ 
             's3-access' => [ 
-                'key' => 'AKIAJYVYIIGGJQHBMDSA', 
-                'secret' => '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', 
+                'key' => 'KEY_ID', 
+                'secret' => 'SECRET_KEY', 
                 'bucket' => 'zoodifyfilesbucket', 
                 'region' => 'ap-south-1', 
                 'version' => 'latest', 

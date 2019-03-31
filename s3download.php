@@ -3,7 +3,14 @@ use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
 	//require '/path/to/vendor/autoload.php';
 	require '../../../home/ubuntu/vendor/autoload.php';
+    require 'mimetypes.php';
+
     $bucket = 'zoodifyfilesbucket';
+
+ if(isset($_GET['filekey'])){
+
+    $file_name = $_GET['filekey'];
+    }
 
    // if(isset($_POST['keyfile'])){
     $config = [ 
@@ -62,9 +69,14 @@ try{
 // echo $result;
 
 
-$file_name = 'brochure_final.pdf';
+
+$file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+ $content_type = $mime_types['.'.$file_ext];
+
 $file_url = 'https://zoodifyfilesbucket.s3.ap-south-1.amazonaws.com/' . $file_name;
-header('Content-Type: application/pdf');
+//header('Content-Type: application/pdf');
+header('Content-Type: '.$content_type);
+
 header('Content-Disposition: inline; filename="' . $file_name . '"');
 header('Content-Transfer-Encoding: binary');
 header('Expires: 0');

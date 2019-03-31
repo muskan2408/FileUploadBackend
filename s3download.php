@@ -68,11 +68,12 @@ try{
 
 // echo $result;
 
+$resultbool = $s3->doesObjectExist ($bucket, $file_name);
 
 
 $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
  $content_type = $mime_types['.'.$file_ext];
-
+if($resultbool){
 $file_url = 'https://zoodifyfilesbucket.s3.ap-south-1.amazonaws.com/' . $file_name;
 //header('Content-Type: application/pdf');
 header('Content-Type: '.$content_type);
@@ -85,6 +86,7 @@ header('Pragma: public');
 header('Content-Length: ' . filesize($file_url-0000));
 header('Accept-Ranges: bytes');
 readfile($file_url);
+}
 //fpassthru($file_url);
 //}
 ?>

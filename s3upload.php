@@ -29,8 +29,8 @@ use Aws\S3\Exception\S3Exception;
 		'region'  => 'ap-south-1',
 		'version' => 'latest',
 		'credentials' => [
-			'key'    => "AKIAJYVYIIGGJQHBMDSA",
-			'secret' => "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",
+			'key'    => "KEY",
+			'secret' => "SECRET",
 		]
 	]);	
 	
